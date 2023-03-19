@@ -1,0 +1,92 @@
+{{!--
+Це код container файлу для index сторінки,
+в якому міститься код, котрий буде віддаватися по шляху (PATH) - "/"
+--}}
+
+<div>
+	<main>
+		{{#with program}}
+		<section>
+			{{#with excursion}}
+			<h1>{{name}} - {{location.city}}, {{location.country}} ({{date}})</h1>
+			<div>
+				{{> title data="Program" big=true}}
+				<ul>
+					{{#each program}}
+					<li>
+						<div><strong>{{name}}</strong> - {{type}} ({{duration}})</div>
+						<br>
+						<div><b>Details:</b></div>
+						<br>
+						{{#with details}}
+						{{#with museum}}
+						<div>
+							<div>{{name}}</div>
+							<br>
+							<div>
+								<address>{{location.address}} - {{location.city}}, {{location.country}}</address>
+							</div>
+						</div>
+						<br>
+						<div>
+							<ul>
+								{{#each exhibits}}
+								<li>
+									<div>
+										{{name}}
+										{{#if artist}} ({{artist}}) {{/if}}
+										- {{description}}
+										{{#if audio_guide}} (<i>audio guide</i>) {{/if}}
+								</li>
+								<br>
+								{{/each}}
+							</ul>
+						</div>
+						{{/with}}
+						{{#with venue}}
+						<div>
+							<div>{{name}}</div>
+							<br>
+							<div>
+								<address>{{location.address}} - {{location.city}}, {{location.country}}</address>
+							</div>
+						</div>
+						<br>
+						{{/with}}
+						{{#if performers}}
+						<div>
+							<ul>
+								{{#each performers}}
+								<li>
+									<div>
+										{{name}} - {{type}}
+								</li>
+								<br>
+								{{/each}}
+							</ul>
+						</div>
+						{{/if}}
+						<br>
+						{{#with guide}}
+						<div><b>Guide:</b> {{name}} (<em>{{language}}</em>) Rating: {{rating}} </div>
+						{{/with}}
+						<br>
+						<hr>
+						{{/with}}
+					</li>
+					<br>
+					{{/each}}
+				</ul>
+			</div>
+			{{/with}}
+		</section>
+		{{/with}}
+	</main>
+</div>
+
+{{!--
+Цей код містить лише те, що буде виводитись в
+
+<body>
+	Адже наш layout/default.hbs має вже структуру HTML
+	--}}
