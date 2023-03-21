@@ -1,0 +1,155 @@
+{{!
+Це код container файлу для index сторінки,
+в якому міститься код, котрий буде віддаватися по шляху (PATH) - "/"
+}}
+
+<div>
+  <main>
+    <section>
+      <h1>{{name}} ({{price}} $) / {{category}}</h1>
+      <div>
+        {{description}}
+      </div>
+      <br />
+      {{#with features}}
+        <div>
+          {{#with processor}}
+            <h4><span
+                class='badge text-bg-dark'
+              >Processor:</span></h4>
+            <ul>
+              <li>brand: {{brand}}</li>
+              <li>model: {{model}}</li>
+              <li>speed: {{speed}}</li>
+              <li>cores: {{cores}}</li>
+              <li>cache: {{cache}}</li>
+            </ul>
+          {{/with}}
+        </div>
+        <div>
+          {{#with memory}}
+            <h4><span
+                class='badge text-bg-dark'
+              >Memory:</span></h4>
+            <ul>
+              <li>type: {{type}}</li>
+              <li>size: {{size}}</li>
+              <li>speed: {{speed}}</li>
+            </ul>
+          {{/with}}
+        </div>
+        <div>
+          {{#with storage}}
+            <h4><span
+                class='badge text-bg-dark'
+              >Storage:</span></h4>
+            <ul>
+              <li>type: {{type}}</li>
+              <li>size: {{size}}</li>
+            </ul>
+          {{/with}}
+        </div>
+        <div>
+          {{#with display}}
+            <h4><span
+                class='badge text-bg-dark'
+              >Display:</span></h4>
+            <ul>
+              <li>size: {{size}}</li>
+              <li>resolution: {{resolution}}</li>
+              <li>technology: {{technology}}</li>
+              <li>color space: {{color_space}}</li>
+              <li>brightness: {{brightness}}</li>
+              <li>refresh rate: {{refresh_rate}}</li>
+            </ul>
+          {{/with}}
+        </div>
+        <div>
+          {{#with graphics}}
+            <h4><span
+                class='badge text-bg-dark'
+              >Graphics:</span></h4>
+            <ul>
+              <li>brand: {{brand}}</li>
+              <li>model: {{model}}</li>
+              <li>memory: {{memory}}</li>
+            </ul>
+          {{/with}}
+        </div>
+        <div>
+          <h4><span
+              class='badge text-bg-dark'
+            >Ports:</span></h4>
+          <ul>
+            {{#each ports}}
+              <li>{{type}} ({{count}})</li>
+              {{#if features}}
+                <ul>
+                  {{#each features}}
+                    <li>{{this}}</li>
+                  {{/each}}
+                </ul>
+              {{/if}}
+            {{/each}}
+          </ul>
+        </div>
+        <div>
+          {{#with battery}}
+            <h4><span
+                class='badge text-bg-dark'
+              >Battery:</span></h4>
+            <ul>
+              <li>type: {{type}}</li>
+              <li>capacity: {{capacity}}</li>
+              <li>life: {{life}}</li>
+            </ul>
+          {{/with}}
+        </div>
+        <div>
+          <h4><span
+              class='badge text-bg-dark'
+            >Weight:</span></h4>
+          <ul>
+            <li>{{weight}}</li>
+          </ul>
+        </div>
+        <div>
+          {{#with dimensions}}
+            <h4><span
+                class='badge text-bg-dark'
+              >Dimensions:</span></h4>
+            <ul>
+              <li>height: {{height}}</li>
+              <li>width: {{width}}</li>
+              <li>depth: {{depth}}</li>
+            </ul>
+          {{/with}}
+        </div>
+        <div>
+          <h4><span class='badge text-bg-dark'>Operating
+              system:</span></h4>
+          <ul>
+            <li>{{operating_system}}</li>
+          </ul>
+        </div>
+        <div>
+          <h4><span
+              class='badge text-bg-dark'
+            >Accessories:</span></h4>
+          <ul>
+            {{#each accessories}}
+              <li>{{name}} ({{price}} $)</li>
+            {{/each}}
+          </ul>
+        </div>
+      {{/with}}
+    </section>
+  </main>
+</div>
+
+{{!
+Цей код містить лише те, що буде виводитись в
+
+<body>
+	Адже наш layout/default.hbs має вже структуру HTML
+	}}
