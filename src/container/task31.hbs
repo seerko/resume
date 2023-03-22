@@ -1,0 +1,289 @@
+<main>
+  {{#with navigation}}
+    <div class='row'>
+      <div class='col-12'>
+        {{#each links}}
+          <a
+            href='{{href}}'
+            target='_blank'
+            class='btn text-primary'
+          >
+            {{text}}
+          </a>
+        {{/each}}
+        {{#with button}}
+          <a
+            href='{{href}}'
+            type='button'
+            class='btn btn-primary'
+          >{{text}}</a>
+        {{/with}}
+      </div>
+    </div>
+  {{/with}}
+  <hr />
+  {{#with header}}
+    <div class='row'>
+      <div class='col-12'>
+        <h1>{{title}}</h1>
+        <p>{{description}}</p>
+        {{#with button}}
+          <a
+            href='{{link}}'
+            type='button'
+            class='btn btn-primary'
+          >{{text}}</a>
+        {{/with}}
+      </div>
+    </div>
+  {{/with}}
+  <hr />
+  {{#with city}}
+    <div class='row'>
+      <div class='col-12'>
+        <h2>{{title}}</h2>
+        <div class='row g-4'>
+          {{#each cards}}
+            <div class='col-5'>
+              <div class='card'>
+                {{#with picture}}
+                  <img
+                    class='card-img-top'
+                    src='{{src}}'
+                    alt='{{alt}}'
+                  />
+                {{/with}}
+                <div class='card-body'>
+                  <h6>{{title}}</h6>
+                  <p>{{description}}</p>
+                  {{#with button}}
+                    <a
+                      href='{{href}}'
+                      type='button'
+                      class='btn btn-primary'
+                    >{{text}}</a>
+                  {{/with}}
+                </div>
+              </div>
+            </div>
+          {{/each}}
+        </div>
+      </div>
+    </div>
+  {{/with}}
+  <hr />
+  {{#with winner}}
+    <div class='row'>
+      <div class='col-12'>
+        <h2>{{title}}</h2>
+        {{#with table}}
+          <table class='table'>
+            <thead>
+              <tr>
+                {{#each head}}
+                  <th>{{this}}</th>
+                {{/each}}
+              </tr>
+            </thead>
+            <tbody>
+              {{#each user}}
+                <tr>
+                  <th>{{place}}</th>
+                  <td>{{name}}</td>
+                  <td>{{surname}}</td>
+                  <td>{{nickname}}</td>
+                </tr>
+              {{/each}}
+            </tbody>
+          </table>
+        {{/with}}
+      </div>
+    </div>
+  {{/with}}
+  <hr />
+  {{#with gallery}}
+    <div class='row'>
+      <div class='col-12'>
+        <h2>{{title}}</h2>
+        <div class='row g-2'>
+          {{#each cards}}
+            <div class='col-4'>
+              <ul class='list-group'>
+                <li
+                  class='list-group-item text-bg-light'
+                >{{name}}</li>
+                {{#each items}}
+                  <li class='list-group-item'>{{this}}</li>
+                {{/each}}
+              </ul>
+            </div>
+          {{/each}}
+        </div>
+      </div>
+    </div>
+  {{/with}}
+  <hr />
+  {{#with relaxion}}
+    <div class='row'>
+      <div class='col-12'>
+        <h2 class='display-3'>{{title}}</h2>
+        <div class='row g-4'>
+          {{#each cards}}
+            <div class='col-5'>
+              <div class='card text-bg-secondary'>
+                <div class='card-header'>{{header}}</div>
+                <div class='card-body'>
+                  <h6 class='card-title'>{{title}}</h6>
+                  <div>{{description}}</div>
+                </div>
+              </div>
+            </div>
+          {{/each}}
+        </div>
+      </div>
+    </div>
+  {{/with}}
+  <hr />
+  {{#with rest}}
+    <div class='row'>
+      <div class='col-12'>
+        <div class='row g-4'>
+          {{#each cards}}
+            <div class='col-5 text-center'>
+              <div class='card'>
+                <div class='card-header'>{{header}}</div>
+                <div class='card-body'>
+                  <h6 class='card-title'>{{title}}</h6>
+                  <p>{{description}}</p>
+                  <div><button
+                      type='button'
+                      class='btn btn-primary'
+                    >{{button}}</button></div>
+                </div>
+                <div class='card-footer'>{{footer}}</div>
+              </div>
+            </div>
+          {{/each}}
+        </div>
+      </div>
+    </div>
+  {{/with}}
+  <hr />
+  {{#with proposition}}
+    <div class='row'>
+      <div class='col-12'>
+        <h2 class='display-2'>{{title}}</h2>
+        <div class='row g-4'>
+          {{#each card}}
+            <div class='col-5'>
+              <div class='card text-bg-warning text-white'>
+                <div class='card-header'>{{header}}</div>
+                <div class='card-body'>
+                  <h6 class='card-title'>{{title}}</h6>
+                  <div>{{description}}</div>
+                </div>
+              </div>
+            </div>
+          {{/each}}
+        </div>
+      </div>
+    </div>
+  {{/with}}
+  <hr />
+  {{#with footer}}
+    <div class='row'>
+      <div class='col-12'>
+        <h5>{{title}}</h5>
+        <div class='row g-4'>
+          {{#with navigation}}
+            <div class='col-3'>
+              <a
+                class='btn btn-outline-light text-primary'
+                href='{{0.url}}'
+                target='_blank'
+              >
+                {{0.text}}
+              </a>
+            </div>
+            <div class='col-3'>
+              <a
+                class='btn btn-outline-dark'
+                href='{{1.url}}'
+                target='_blank'
+              >
+                {{1.text}}
+              </a>
+            </div>
+            <div class='col-6'>
+              <a
+                class='btn btn-outline-info'
+                href='{{2.url}}'
+                target='_blank'
+              >
+                {{2.text}}
+              </a>
+            </div>
+          {{/with}}
+          {{#with socialMedia}}
+            <div class='col-3'>
+              <a
+                class='btn btn-outline-light text-primary'
+                href='{{0.link}}'
+                target='_blank'
+              >
+                {{0.name}}
+              </a>
+            </div>
+            <div class='col-3'>
+              <a
+                class='btn btn-outline-dark'
+                href='{{1.link}}'
+                target='_blank'
+              >
+                {{1.name}}
+              </a>
+            </div>
+            <div class='col-6'>
+              <a
+                class='btn btn-outline-info'
+                href='{{2.link}}'
+                target='_blank'
+              >
+                {{2.name}}
+              </a>
+            </div>
+          {{/with}}
+          {{#with partners}}
+            <div class='col-3'>
+              <a
+                class='btn btn-outline-light text-primary'
+                href='{{0.link}}'
+                target='_blank'
+              >
+                {{0.name}}
+              </a>
+            </div>
+            <div class='col-3'>
+              <a
+                class='btn btn-outline-dark'
+                href='{{1.link}}'
+                target='_blank'
+              >
+                {{1.name}}
+              </a>
+            </div>
+            <div class='col-6'>
+              <a
+                class='btn btn-outline-info'
+                href='{{2.link}}'
+                target='_blank'
+              >
+                {{2.name}}
+              </a>
+            </div>
+          {{/with}}
+        </div>
+      </div>
+    </div>
+  {{/with}}
+</main>
