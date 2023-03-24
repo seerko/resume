@@ -1,0 +1,168 @@
+<main>
+  <hr />
+  {{#with navigation}}
+    <div class='row'>
+      <div class='col-4'><h1>{{Logo}}</h1></div>
+      <div class='col-8'>
+        <ul class='nav justify-content-end'>
+          {{#each links}}
+            <li class='nav-item'>
+              <a
+                class='nav-link'
+                href='{{href}}'
+              >{{text}}</a>
+            </li>
+          {{/each}}
+          <li class='nav-item'>
+            <a class='nav-link disabled'>Disabled</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  {{/with}}
+  <hr />
+  {{#with newsBlock}}
+    <div class='row'>
+      <div class='col-12 text-center mt-4'>
+        <h2>{{title}}</h2>
+      </div>
+    </div>
+    <div class='row gx-2 gy-3'>
+      {{#each cards}}
+        <div class='col-3'>
+          <div class='card text-bg-dark'>
+            <div class='card-body'>
+              <div class='card-title mb-3'>
+                {{title}}
+                {{#if isNew}}
+                  <span
+                    class='badge rounded-pill text-bg-success'
+                  >Нова</span>
+                {{/if}}
+                {{#if isTop}}
+                  <span
+                    class='badge rounded-pill text-bg-danger'
+                  >Топ</span>
+                {{/if}}
+              </div>
+              <p class='card-text'>{{description}}</p>
+            </div>
+          </div>
+        </div>
+      {{/each}}
+    </div>
+  {{/with}}
+  <hr />
+  {{#with goodsBlock}}
+    <div class='row'>
+      <div class='col-12 text-center mt-4 mb-4'>
+        <ul class='nav nav-tabs'>
+          {{#each tabs}}
+            <li class='nav-item'>
+              <a
+                class='nav-link {{#if isActive}} active {{/if}}
+								{{#if isDisabled}} disabled {{/if}}'
+                aria-current='page'
+                href='#'
+              >{{text}}</a>
+            </li>
+          {{/each}}
+        </ul>
+      </div>
+    </div>
+    <div class='row gx-2 gy-3 mb-5 mt-2'>
+      {{#each cards}}
+        <div class='col-4'>
+          <div class='card'>
+            <img
+              class='card-img-top'
+              src='{{image}}'
+              alt='{{title}}'
+            />
+            <div class='card-body'>
+              <h6>
+                {{title}}
+                {{#if isHot}}
+                  <span
+                    class='badge rounded-pill text-bg-warning text-white'
+                  >HOT!</span>
+                {{/if}}
+                {{#if isNew}}
+                  <span
+                    class='badge rounded-pill text-bg-primary'
+                  >Нове</span>
+                {{/if}}
+              </h6>
+              <div>{{description}}</div>
+            </div>
+          </div>
+        </div>
+      {{/each}}
+    </div>
+  {{/with}}
+  <hr />
+  {{#with subscribe}}
+    <div class='row'>
+      <div class='col-12 mt-4'>
+        <div class='alert text-bg-dark' role='alert'>
+          <div class='row'>
+            <div class='col-6'>
+              <h2>{{header}}</h2>
+              <p>{{description}}</p>
+            </div>
+            <div
+              class='col-6 d-flex align-items-center justify-content-end'
+            >
+              {{#each buttons}}
+                <a
+                  class='btn btn-primary btn-sm ms-2'
+                  href='{{link}}'
+                  role='button'
+                >{{text}}</a>
+              {{/each}}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  {{/with}}
+  <hr />
+  {{#with service}}
+    <div class='row'>
+      <div class='col-12 mt-4 mb-3 text-center'>
+        <div class='alert text-bg-success' role='alert'>
+          <h2>{{title}}</h2>
+          <p>{{description}}</p>
+          <div>
+            {{#each buttons}}
+              <a
+                class='btn btn-primary btn-sm ms-2'
+                href='{{link}}'
+                role='button'
+              >{{text}}</a>
+            {{/each}}
+          </div>
+        </div>
+      </div>
+    </div>
+  {{/with}}
+  <hr />
+  <div class='row mt-2 mb-3'>
+
+    {{#each footer}}
+      <div class='col-2'>
+        <ul class='nav flex-column'>
+          <li class='nav-item'>
+						{{#each this}}
+            <a
+              class='nav-link {{#if @last}} disabled{{/if}}'
+              aria-current='page'
+              href='{{link}}'
+            >{{text}}</a>
+          </li>
+					{{/each}}
+        </ul>
+      </div>
+    {{/each}}
+  </div>
+</main>
