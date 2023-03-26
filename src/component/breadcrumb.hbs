@@ -1,0 +1,20 @@
+<div class='row my-4'>
+  <div class='col-12'>
+    <nav aria-label='breadcrumb'>
+      <ol class='breadcrumb'>
+        {{#each breadcrumb}}
+          {{#if url}}
+            <li class='breadcrumb-item'><a
+                href='{{url}}'
+              >{{name}}</a></li>
+          {{else}}
+            <li
+              class='breadcrumb-item active'
+              aria-current='page'
+            >{{name}}</li>
+          {{/if}}
+        {{/each}}
+      </ol>
+    </nav>
+  </div>
+</div>

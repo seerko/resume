@@ -1,0 +1,44 @@
+<main>
+	{{> breadcrumb}}
+	{{#with newsData}}
+    <div class='row'>
+      <div class='col-12 text-center'>
+        <img
+            class='img-fluid w-100'
+            src='{{photo}}'
+            alt='{{head.heading}}'
+          />
+      </div>
+			{{#with head}}
+      <div class='col-12 mt-4'>
+        <h1>{{heading}}</h1>
+      </div>
+      <div class='col-12'>
+        <p>{{description}}</p>
+      </div>
+			{{/with}}
+			{{#each body}}
+      <div class='col-12 mt-1 mb-1'>
+        <h2>{{title}}</h2>
+      </div>
+      <div class='col-12'>
+        <p>{{text}}</p>
+      </div>
+			{{/each}}
+    </div>
+  {{/with}}
+	<hr>
+  {{#with newsOtherBlock}}
+    <div class='row'>
+      <div class='col-12 text-center mt-4'>
+        <h2>{{title}}</h2>
+      </div>
+    </div>
+    <div class='row gx-2 gy-3'>
+      {{#each cards}}
+        {{> shoppost title=title description=description isTop=isTop isNew=isNew}}
+      {{/each}}
+    </div>
+  {{/with}}
+  {{> shopaction}}
+</main>
