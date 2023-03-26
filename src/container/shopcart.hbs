@@ -1,0 +1,94 @@
+<main>
+  {{#with header}}
+    <div class='row mt-5 mb-3'>
+      <div class='col-6'>
+        <h2>{{title}}</h2>
+      </div>
+      <div class='col-6 text-end'>
+        {{#with button}}
+          <a
+            href='{{link}}'
+            class='btn btn-outline-dark'
+          >{{text}}</a>
+        {{/with}}
+      </div>
+    </div>
+  {{/with}}
+  <div class='col-12 my-5'>
+    <hr />
+  </div>
+  {{> cartGoodsItem goodsBlock=goodsBlock}}
+  <div class='col-12 my-5'>
+    <hr />
+  </div>
+  <div class='col-12 my-5'>
+    {{#with total}}
+      <div class='row'>
+        <div class='col-8'>
+          <h4>{{title}}</h4>
+          <h2>{{amount}}</h2>
+          <p>{{delivery}}</p>
+        </div>
+        <div class='col-4'>
+          <div class='row'>
+            {{#each buttons}}
+              {{#if isSuccess}}
+                <div class='col-12 mb-3'><a
+                    href='{{link}}'
+                    class='btn btn-success'
+                  >{{text}}</a></div>
+              {{/if}}
+              {{#if isOutline}}
+                <div class='col-12'><a
+                    href='{{link}}'
+                    class='btn btn-outline-success'
+                  >{{text}}</a></div>
+              {{/if}}
+            {{/each}}
+          </div>
+        </div>
+      </div>
+    {{/with}}
+  </div>
+  <div class='col-12 my-0'>
+    <hr />
+  </div>
+	{{#with goodsOtherBlock}}
+    <div class='row'>
+      <div class='col-12 mt-4 mb-3 text-center'>
+        <h2>{{title}}</h2>
+      </div>
+      {{#each cards}}
+        {{> shopcard image=image title=title description=description isHot=isHot idNew=idNew}}
+      {{/each}}
+    </div>
+  {{/with}}
+  <div class='col-12 my-5'>
+    <hr />
+  </div>
+	{{#with subscribe}}
+    <div class='row'>
+      <div class='col-12 mt-2'>
+        <div class='alert text-bg-dark' role='alert'>
+          <div class='row'>
+            <div class='col-6'>
+              <h2>{{header}}</h2>
+              <p>{{description}}</p>
+            </div>
+            <div
+              class='col-6 d-flex align-items-center justify-content-end'
+            >
+              {{#each buttons}}
+                <a
+                  class='btn btn-primary btn-sm ms-2'
+                  href='{{link}}'
+                  role='button'
+                >{{text}}</a>
+              {{/each}}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  {{/with}}
+</main>
