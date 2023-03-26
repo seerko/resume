@@ -7,26 +7,7 @@
     </div>
     <div class='row gx-2 gy-3'>
       {{#each cards}}
-        <div class='col-3'>
-          <div class='card text-bg-dark'>
-            <div class='card-body'>
-              <div class='card-title mb-3'>
-                {{title}}
-                {{#if isNew}}
-                  <span
-                    class='badge rounded-pill text-bg-success'
-                  >Нова</span>
-                {{/if}}
-                {{#if isTop}}
-                  <span
-                    class='badge rounded-pill text-bg-danger'
-                  >Топ</span>
-                {{/if}}
-              </div>
-              <p class='card-text'>{{description}}</p>
-            </div>
-          </div>
-        </div>
+        {{> shoppost title=title description=description isTop=isTop isNew=isNew}}
       {{/each}}
     </div>
   {{/with}}
