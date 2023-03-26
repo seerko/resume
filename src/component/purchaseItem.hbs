@@ -1,0 +1,34 @@
+{{#each itemList}}
+  <div class='col-12'>
+    <div class='row'>
+      <div class='col-4'>
+        <div>{{number}}</div>
+        <div><b>{{status}}</b></div>
+      </div>
+      <div class='col-2'>
+        <div>{{amount.title}}</div>
+        <div><b>{{amount.value}}</b></div>
+      </div>
+      <div class='col-4'>
+        {{#each images}}
+          <img
+            width='60px'
+            src='{{this}}'
+            class='img-fluid rounded'
+          />
+        {{/each}}
+      </div>
+      <div class='col-2'>
+        {{#with button}}
+          <a
+            href='{{link}}'
+            class='btn btn-primary btn'
+          >{{text}}</a>
+        {{/with}}
+      </div>
+    </div>
+  </div>
+  <div class='col-12'>
+    <hr />
+  </div>
+{{/each}}
