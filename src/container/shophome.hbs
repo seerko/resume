@@ -1,26 +1,4 @@
 <main>
-  <hr />
-  {{#with navigation}}
-    <div class='row'>
-      <div class='col-4'><h1>{{Logo}}</h1></div>
-      <div class='col-8'>
-        <ul class='nav justify-content-end'>
-          {{#each links}}
-            <li class='nav-item'>
-              <a
-                class='nav-link'
-                href='{{href}}'
-              >{{text}}</a>
-            </li>
-          {{/each}}
-          <li class='nav-item'>
-            <a class='nav-link disabled'>Disabled</a>
-          </li>
-        </ul>
-      </div>
-    </div>
-  {{/with}}
-  <hr />
   {{#with newsBlock}}
     <div class='row'>
       <div class='col-12 text-center mt-4'>
@@ -126,43 +104,5 @@
       </div>
     </div>
   {{/with}}
-  <hr />
-  {{#with service}}
-    <div class='row'>
-      <div class='col-12 mt-4 mb-3 text-center'>
-        <div class='alert text-bg-success' role='alert'>
-          <h2>{{title}}</h2>
-          <p>{{description}}</p>
-          <div>
-            {{#each buttons}}
-              <a
-                class='btn btn-primary btn-sm ms-2'
-                href='{{link}}'
-                role='button'
-              >{{text}}</a>
-            {{/each}}
-          </div>
-        </div>
-      </div>
-    </div>
-  {{/with}}
-  <hr />
-  <div class='row mt-2 mb-3'>
-
-    {{#each footer}}
-      <div class='col-2'>
-        <ul class='nav flex-column'>
-          <li class='nav-item'>
-						{{#each this}}
-            <a
-              class='nav-link {{#if @last}} disabled{{/if}}'
-              aria-current='page'
-              href='{{link}}'
-            >{{text}}</a>
-          </li>
-					{{/each}}
-        </ul>
-      </div>
-    {{/each}}
-  </div>
+  {{> shopaction}}
 </main>
