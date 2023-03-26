@@ -1,0 +1,75 @@
+{{#each reviewList}}
+  <div class='col-12 my-5'>
+    <div class='card'>
+      <div class='card-body'>
+        <div class='card'>
+          {{#with title}}
+            <div class='card-header bg-white'>
+              <div class='row'>
+                <div class='col'>
+                  <h6>{{userName}}</h6>
+                  <div>{{caption}}</div>
+                </div>
+                <div
+                  class='col d-flex align-items-center justify-content-end'
+                >
+                  <div>{{date}}</div>
+                </div>
+              </div>
+            </div>
+          {{/with}}
+          {{#with reviewBody}}
+            <div class='card-body'>
+              <p>{{seller.title}}: {{seller.value}}</p>
+              <p>{{rating.title}}: {{rating.value}}</p>
+              {{#each text}}
+                <p>{{this}}</p>
+              {{/each}}
+              <p class='mb-0'><b
+                >{{advantages.title}}:</b></p>
+              <p> {{advantages.text}}</p>
+              <p class='mb-0'><b
+                >{{disadvantages.title}}:</b></p>
+              <p> {{disadvantages.text}}</p>
+              <div>
+                {{#each images}}
+                  <img
+                    class='rounded'
+                    width='75px'
+                    src='{{this}}'
+                  />
+                {{/each}}
+              </div>
+            </div>
+          {{/with}}
+        </div>
+        {{#with reviewBody}}
+          {{#each coments}}
+            <div class='row'>
+              <div class='col-1'></div>
+              <div class='col-11'>
+                <div class='card mt-4'>
+                  <div class='card-body'>
+                    <div class='row'>
+                      <div class='col'>
+                        <h6>{{userName}}</h6>
+                      </div>
+                      <div class='col text-end'>
+                        <div>{{date}}</div>
+                      </div>
+                    </div>
+                    <div class='row'>
+                      <div class='col'>
+                        {{text}}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          {{/each}}
+        {{/with}}
+      </div>
+    </div>
+  </div>
+{{/each}}
