@@ -1,0 +1,122 @@
+<main>
+	{{> breadcrumb}}
+  <div class='row'>
+    <div class='col-12'><h1>{{header}}</h1></div>
+  </div>
+  <div class='row my-4'>
+    {{#each sortBlock}}
+      <div class='col-3'>
+        <select class='form-select'>
+          <option selected>{{placeholder}}</option>
+          {{#each options}}
+            <option value='{{value}}'>{{text}}</option>
+          {{/each}}
+        </select>
+      </div>
+    {{/each}}
+  </div>
+  <div class='row'>
+    {{#with filterBlock}}
+      <div class='col-4'>
+        <div class='card'>
+          <div class='card-body'>
+            {{#with sellers}}
+              <div class='pb-2'>{{title}}</div>
+              {{#each list}}
+                <div>
+                  <div class='form-check'>
+                    <input
+                      class='form-check-input'
+                      type='checkbox'
+                      value=''
+                    />
+                    <label class='form-check-label'>
+                      {{value}}
+                    </label>
+                  </div>
+                </div>
+              {{/each}}
+            {{/with}}
+            <hr />
+            {{#with brands}}
+              <div class='pb-2'>{{title}}</div>
+              <div class='mb-2'>
+                <input
+                  type='text'
+                  class='form-control'
+                  placeholder='{{input.placeholder}}'
+                />
+              </div>
+              {{#each options}}
+                <div>
+                  <div class='form-check'>
+                    <input
+                      class='form-check-input'
+                      type='checkbox'
+                      value=''
+                    />
+                    <label class='form-check-label'>
+                      {{value}}
+                    </label>
+                  </div>
+                </div>
+              {{/each}}
+            {{/with}}
+            <hr />
+            {{#with price}}
+              <div class='pb-2'>{{title}}</div>
+              <div class='row'>
+                <div class='col pe-0'>
+                  <input
+                    type='text'
+                    class='form-control'
+                    placeholder='{{range.from}}'
+                  />
+                </div>
+                <div class='col pe-0'>
+                  <input
+                    type='text'
+                    class='form-control'
+                    placeholder='{{range.to}}'
+                  />
+                </div>
+                <div class='col'>
+                  <a
+                    href='{{button.link}}'
+                    class='btn btn-outline-dark'
+                  >{{button.text}}</a>
+                </div>
+              </div>
+            {{/with}}
+            {{#each filterList}}
+              <hr />
+              <div class='pb-2'>{{title}}</div>
+              {{#each options}}
+                <div>
+                  <div class='form-check'>
+                    <input
+                      class='form-check-input'
+                      type='checkbox'
+                      value=''
+                    />
+                    <label class='form-check-label'>
+                      {{value}}
+                    </label>
+                  </div>
+                </div>
+              {{/each}}
+            {{/each}}
+          </div>
+        </div>
+      </div>
+    {{/with}}
+    <div class='col-8'>
+      <div class='row'>
+        {{#each goodsList}}
+          {{> catalogItem}}
+        {{/each}}
+      </div>
+    </div>
+  </div>
+	{{> shopaction}}
+</main>
