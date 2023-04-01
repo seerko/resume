@@ -3,16 +3,15 @@
 в якому міститься код, котрий буде віддаватися по шляху (PATH) - "/"
 }}
 
-<div>
+<div class='row'>
   <main>
     <section>
       <h1>{{name}} ({{price}} $) / {{category}}</h1>
-      <div>
+      <div class='col-12 my-4'>
         {{description}}
       </div>
-      <br />
       {{#with features}}
-        <div>
+        <div class='col-12 my-4'>
           {{#with processor}}
             <h4><span
                 class='badge text-bg-dark'
@@ -26,7 +25,7 @@
             </ul>
           {{/with}}
         </div>
-        <div>
+        <div class='col-12 my-4'>
           {{#with memory}}
             <h4><span
                 class='badge text-bg-dark'
@@ -38,7 +37,7 @@
             </ul>
           {{/with}}
         </div>
-        <div>
+        <div class='col-12 my-4'>
           {{#with storage}}
             <h4><span
                 class='badge text-bg-dark'
@@ -49,7 +48,7 @@
             </ul>
           {{/with}}
         </div>
-        <div>
+        <div class='col-12 my-4'>
           {{#with display}}
             <h4><span
                 class='badge text-bg-dark'
@@ -64,7 +63,7 @@
             </ul>
           {{/with}}
         </div>
-        <div>
+        <div class='col-12 my-4'>
           {{#with graphics}}
             <h4><span
                 class='badge text-bg-dark'
@@ -76,7 +75,7 @@
             </ul>
           {{/with}}
         </div>
-        <div>
+        <div class='col-12 my-4'>
           <h4><span
               class='badge text-bg-dark'
             >Ports:</span></h4>
@@ -93,7 +92,7 @@
             {{/each}}
           </ul>
         </div>
-        <div>
+        <div class='col-12 my-4'>
           {{#with battery}}
             <h4><span
                 class='badge text-bg-dark'
@@ -105,7 +104,7 @@
             </ul>
           {{/with}}
         </div>
-        <div>
+        <div class='col-12 my-4'>
           <h4><span
               class='badge text-bg-dark'
             >Weight:</span></h4>
@@ -113,7 +112,7 @@
             <li>{{weight}}</li>
           </ul>
         </div>
-        <div>
+        <div class='col-12 my-4'>
           {{#with dimensions}}
             <h4><span
                 class='badge text-bg-dark'
@@ -125,14 +124,14 @@
             </ul>
           {{/with}}
         </div>
-        <div>
+        <div class='col-12 my-4'>
           <h4><span class='badge text-bg-dark'>Operating
               system:</span></h4>
           <ul>
             <li>{{operating_system}}</li>
           </ul>
         </div>
-        <div>
+        <div class='col-12 my-4'>
           <h4><span
               class='badge text-bg-dark'
             >Accessories:</span></h4>

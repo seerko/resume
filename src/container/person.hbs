@@ -3,126 +3,101 @@
 в якому міститься код, котрий буде віддаватися по шляху (PATH) - "/summary"
 --}}
 
-<div>
+<div class="row">
 	{{#with person}}
 	<main>
 		<section>
 			{{> title data=name big=true}}
-			<div>
+			<div class="col-12 my-4">
 				Age: {{age}}
 			</div>
-			<br>
-			<div>
+			<div class="col-12 my-4">
 				Gender: {{gender}}
 			</div>
-			<br>
 			<div>
 				{{#with address}}
 				<address>
-					{{street}} <br>
-					{{city}}, {{state}}{{zip}} <br>
-					{{country}}
+					<div>{{street}}</div>
+					<div>{{city}}, {{state}}{{zip}}</div>
+					<div>{{country}}</div>
 				</address>
 				{{/with}}
 			</div>
 			<hr>
-			<div>
+			<div class="col-12 my-4">
 				{{> title data="Education" big=false}}
 				<ul>
 					{{#each education}}
 					<li>
-						<div>{{university}} ({{graduationYear}})</div>
-						<br>
-						<div>{{degree}} / {{major}}</div>
-						<br>
+						<div class="col-12 my-4">{{university}} ({{graduationYear}})</div>
+						<div class="col-12 my-4">{{degree}} / {{major}}</div>
 					</li>
 					{{/each}}
 				</ul>
 			</div>
 			<hr>
-			<div>
+			<div class="col-12 my-4">
 				{{> title data="Experience" big=false}}
 				<ul>
 					{{#each workExperience}}
 					<li>
-						<div>{{title}} ({{company}}) / {{startDate}} -
+						<div  class="col-12 my-4">{{title}} ({{company}}) / {{startDate}} -
 							{{#if endDate}} {{endDate}} {{else}} (still working) {{/if}}/</div>
-						<br>
-						<div>
+						<div class="col-12 my-4">
 							<strong>Responsibilities</strong>
 						</div>
-						<br>
 						<ul>
 							{{#each responsibilities}}
-							<li>{{this}}</li>
-							<br>
+							<li class="my-4">{{this}}</li>
 							{{/each}}
 						</ul>
 					</li>
-					<div>Company: <b>{{company}}</b> ({{year_founded}}) - {{industry}}</div>
-					<br>
-					<div>
-						<div><em>Employees:</em></div>
-						<br>
+					<div class="col-12 my-4">Company: <b>{{company}}</b> ({{year_founded}}) - {{industry}}</div>
+					<div class="col-12 my-4">
+						<div class="col-12 my-4"><em>Employees:</em></div>
 						<ol>
 							{{#each employees}}
 							<li>
-								<div>{{name}} ({{position}} / {{department}})</div>
-								<br>
-								<div><b>Projects:</b></div>
-								<br>
+								<div class="col-12 my-4">{{name}} ({{position}} / {{department}})</div>
+								<div class="col-12 my-4"><b>Projects:</b></div>
 								<ul>
 									{{#each projects}}
 									<li>
-										<div>{{name}} ({{status}}) - {{description}}</div>
-										<br>
-										<div><b>Teams:</b></div>
-										<br>
+										<div class="col-12 my-4">{{name}} ({{status}}) - {{description}}</div>
+										<div class="col-12 my-4"><b>Teams:</b></div>
 										<ul>
 											{{#each teams}}
 											<li>
-												<div>{{team_name}}</div>
-												<br>
+												<div class="col-12 my-4">{{team_name}}</div>
 												{{#with team_leader}}
-												<div><a href="mailto:{{email}}">{{name}}</a> - {{title}}</div>
+												<div class="col-12 my-4"><a href="mailto:{{email}}">{{name}}</a> - {{title}}</div>
 												{{/with}}
-												<br>
-												<div><b>Teams members:</b></div>
-												<br>
+												<div class="col-12 my-4"><b>Teams members:</b></div>
 												<ul>
 													{{#each team_members}}
 													<li>
-														<div><a href="mailto:{{email}}">{{name}}</a> - {{title}}</div>
-														<br>
-														<div><b>Skills:</b></div>
-														<br>
+														<div class="col-12 my-4"><a href="mailto:{{email}}">{{name}}</a> - {{title}}</div>
+														<div class="col-12 my-4"><b>Skills:</b></div>
 														<ul>
 															{{#each skills}}
-															<li>{{this}}</li>
-															<br>
+															<li class="my-4">{{this}}</li>
 															{{/each}}
 														</ul>
-														<div><b>Projects:</b></div>
-														<br>
+														<div class="col-12 my-4"><b>Projects:</b></div>
 														<div>
 															<ul>
 																{{#each projects}}
-																<li>{{name}} - {{description}}</li>
-																<br>
-																<div><b>Technologies:</b></div>
-																<br>
+																<li class="my-4">{{name}} - {{description}}</li>
+																<div class="col-12 my-4"><b>Technologies:</b></div>
 																<ul>
 																	{{#each technologies}}
-																	<li>{{this}}</li>
-																	<br>
+																	<li class="my-4">{{this}}</li>
 																	{{/each}}
 																</ul>
-																<div><b>Team members:</b></div>
-																<br>
+																<div class="col-12 my-4"><b>Team members:</b></div>
 																<ol>
 																	{{#each team_members}}
-																	<li>{{name}} - {{title}}</li>
-																	<br>
+																	<li class="my-4">{{name}} - {{title}}</li>
 																	{{/each}}
 																	</o>
 																	{{/each}}

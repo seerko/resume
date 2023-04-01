@@ -16,7 +16,7 @@ var header = {
   salary: '600$ на місяць',
 
   address:
-    'проспект Науки, 9A, Харків, Харківська область, Украина, 61166',
+    'проспект Науки, 9A, Харків, Харківська область, Україна, 61166',
 }
 
 var footer = {
@@ -45,7 +45,103 @@ router.get('/', function (req, res) {
   // res.render генерує нам HTML сторінку
 
   //            ↙ cюди вводимо назву файлу з сontainer
-  res.render('index', {})
+  res.render('index', {
+    layout: 'index',
+    links: [
+      {
+        text: 'Summary',
+        href: '/summary',
+      },
+      {
+        text: 'Skills',
+        href: '/skills',
+      },
+      {
+        text: 'Education',
+        href: '/education',
+      },
+      {
+        text: 'Work',
+        href: '/work',
+      },
+      {
+        text: 'Emma Johnson',
+        href: '/person',
+      },
+      {
+        text: 'Albert Einstein',
+        href: '/bio',
+      },
+      {
+        text: 'Cultural Tour',
+        href: '/program',
+      },
+      {
+        text: 'Web',
+        href: '/web',
+      },
+      {
+        text: 'JavaScript',
+        href: '/js',
+      },
+      {
+        text: 'Car',
+        href: '/car',
+      },
+      {
+        text: 'Mac',
+        href: '/mac',
+      },
+      {
+        text: 'Facebook',
+        href: '/facebook',
+      },
+      {
+        text: 'Task21',
+        href: '/task21',
+      },
+      {
+        text: 'Task22',
+        href: '/task22',
+      },
+      {
+        text: 'Task31',
+        href: '/task31',
+      },
+      {
+        text: 'Shophome',
+        href: '/shophome',
+      },
+      {
+        text: 'Shopproduct',
+        href: '/shopproduct',
+      },
+      {
+        text: 'Shopnews',
+        href: '/shopnews',
+      },
+      {
+        text: 'Shoporder',
+        href: '/shoporder',
+      },
+      {
+        text: 'Shopcart',
+        href: '/shopcart',
+      },
+      {
+        text: 'Shopprofile',
+        href: '/shopprofile',
+      },
+      {
+        text: 'Shopreview',
+        href: '/shopreview',
+      },
+      {
+        text: 'Shopcatalog',
+        href: '/shopcatalog',
+      },
+    ],
+  })
   //                  ↑↑ сюди вводимо JSON дані
 })
 

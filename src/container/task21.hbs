@@ -6,7 +6,7 @@
 <div>
   <main>
     <section>
-      <div class='card'>
+      <div class='card mb-4'>
         {{#with heading}}
           <div class='card-body'>
             <div class='card'>
@@ -15,14 +15,13 @@
                   <h1>{{title}}</h1>
                   <p>{{text}}</p>
                   {{#with button_text}}
-                    <div>
+                    <div class='col-12 my-4'>
                       <button
                         type='button'
                         class='btn btn-primary'
                       >{{solid}}</button>
                     </div>
-                    <br />
-                    <div>
+                    <div class='col-12'>
                       <button
                         type='button'
                         class='btn btn-outline-primary'
@@ -40,14 +39,13 @@
                   <h2>{{title}}</h2>
                   <p>{{text}}</p>
                   {{#with button_text}}
-                    <div>
+                    <div class='col-12 my-4'>
                       <button
                         type='button'
                         class='btn btn-secondary'
                       >{{solid}}</button>
                     </div>
-                    <br />
-                    <div>
+                    <div class='col-12'>
                       <button
                         type='button'
                         class='btn btn-outline-secondary'
@@ -65,14 +63,13 @@
                   <h3>{{title}}</h3>
                   <p>{{text}}</p>
                   {{#with button_text}}
-                    <div>
+                    <div class='col-12 my-4'>
                       <button
                         type='button'
                         class='btn btn-dark'
                       >{{solid}}</button>
                     </div>
-                    <br />
-                    <div>
+                    <div class='col-12'>
                       <button
                         type='button'
                         class='btn btn-outline-dark'
@@ -85,18 +82,17 @@
           </div>
         {{/with}}
       </div>
-      <br />
-      <div class='card'>
+      <div class='card my-'>
         {{#with nested_display}}
           <div class='card-body'>
             <h1 class='display-1'>{{title}}</h1>
-            <div class='card'>
+            <div class='card my-4'>
               {{#with children_display}}
                 <div class='card-body'>
                   <h4 class='display-4'>{{title}}</h4>
                   <p>{{text}}</p>
                   {{#with button}}
-                    <div>
+                    <div class='col-12 my-4'>
                       <button
                         type='button'
                         class='btn btn-outline-warning'
@@ -106,24 +102,21 @@
                 </div>
               {{/with}}
             </div>
-            <br />
-            <h6>{{header_text}}</h6>
-            <br />
-            <div><button
+            <h6 class='my-4'>{{header_text}}</h6>
+            <div class='col-12 my-4'><button
                 type='button'
                 class='btn btn-info'
               >{{button.text}}</button></div>
           </div>
         {{/with}}
       </div>
-      <br />
-      <div class='card'>
+      <div class='card my-4'>
         {{#with paragraph}}
           <div class='card-body'>
             <p class='text-uppercase'>{{title}}</p>
             <p>{{text}}</p>
             {{#with button}}
-              <div>
+              <div class='col-12'>
                 <a
                   href='{{url}}'
                   target='_blank'
@@ -131,13 +124,12 @@
                 >{{text}}</a>
               </div>
             {{/with}}
-            <br />
             <div class='card'>
               <div class='card-body'>
-                <div>
+                <div class='col-12 my-4'>
                   <ul>
                     {{#each list_name}}
-                      <li>
+                      <l class="my-4"i>
                         <a
                           class='btn btn-outline-light text-primary'
                           href='{{url}}'
@@ -146,7 +138,6 @@
                           {{text}}
                         </a>
                       </li>
-                      <br />
                     {{/each}}
                   </ul>
                 </div>
