@@ -2,141 +2,126 @@
 Це код container файлу для index сторінки,
 в якому міститься код, котрий буде віддаватися по шляху (PATH) - "/"
 --}}
-<div>
+<div class="row">
 	<main>
 		<section>
 			<h1>{{name}}</h1>
-			<div>
+			<div class="col-12 my-4">
 				Born: {{birthdate}} - {{birthplace}}
 			</div>
-			<br>
-			<div>
+			<div class="col-12 my-4">
 				Died: {{deathdate}}
 			</div>
-			<br>
-			<div>
+			<div class="col-12 my-4">
 				Nationality: {{nationality}}
 			</div>
-			<br>
-			<div>
+			<div class="col-12 my-4">
 				Occupation: {{occupation}}
 			</div>
-			<br>
-			<hr><br>
-			<div>
+			<hr>
+			<div class="col-12 my-4">
 				<strong>Known for:</strong>
 				<ul>
 					{{#each known_for}}
-					<li>{{this}}</li>
-					<br>
+					<li class="my-4">{{this}}</li>
 					{{/each}}
 				</ul>
 			</div>
 			<hr>
-			<div>
+			<div class="col-12 my-4">
 				{{> title data="Education" big=false}}
 				<ul>
 					{{#each education}}
 					<li>
-						<div>{{institution}} ({{year}})</div>
-						<br>
-						<div>{{degree}} / {{field}}</div>
-						<br>
+						<div class="col-12 my-4">{{institution}} ({{year}})</div>
+						<div class="col-12 my-4">{{degree}} / {{field}}</div>
 					</li>
 					{{/each}}
 				</ul>
 			</div>
 			<hr>
-			<div>
+			<div class="col-12 my-4">
 				<h4>Notable publications</h4>
 				<ul>
 					{{#each notable_publications}}
 					<li>
-						<div>{{title}} ({{year}}) - {{publisher}}</div>
-						<br>
+						<div class="col-12 my-4">{{title}} ({{year}}) - {{publisher}}</div>
 					</li>
 					{{/each}}
 				</ul>
 			</div>
-			<hr><br>
-			<div>
+			<hr>
+			<div class="col-12 my-4">
 				<b>Partners</b>
 				<ul>
 					{{#each partners}}
 					<li>
-						<div>{{name}} ({{years}}) - {{relationship}}</div>
-						<br>
+						<div class="col-12 my-4">{{name}} ({{years}}) - {{relationship}}</div>
 					</li>
 					{{/each}}
 				</ul>
 			</div>
 			<hr>
-			<div>
+			<div class="col-12 my-4">
 				<h4>Awards</h4>
 				<ul>
 					{{#each awards}}
 					<li>
-						<div>{{title}} ({{year}}) - {{description}}</div>
-						<br>
-					</li>
-					{{/each}}
-				</ul>
-			</div>
-			<hr><br>
-			<div>
-				<b>Influences</b>
-				<ul>
-					{{#each influences}}
-					<li>
-						<div>{{this}}</div>
-						<br>
-					</li>
-					{{/each}}
-				</ul>
-			</div>
-			<hr><br>
-			<div>
-				<b>Influenced</b>
-				<ul>
-					{{#each influenced}}
-					<li>
-						<div>{{this}}</div>
-						<br>
-					</li>
-					{{/each}}
-				</ul>
-			</div>
-			<hr><br>
-			<div>
-				<b>Quotes</b>
-				<ul>
-					{{#each quotes}}
-					<li>
-						<div>{{this}}</div>
-						<br>
-					</li>
-					{{/each}}
-				</ul>
-			</div>
-			<hr><br>
-			<div>
-				<b>Major discoveries</b>
-				<ul>
-					{{#each major_discoveries}}
-					<li>
-						<div>{{title}} ({{year}}) - {{description}}</div>
-						<br>
+						<div class="col-12 my-4">{{title}} ({{year}}) - {{description}}</div>
 					</li>
 					{{/each}}
 				</ul>
 			</div>
 			<hr>
-			<div><b>Contributions</b></div>
-			<br>
+			<div class="col-12 my-4">
+				<b>Influences</b>
+				<ul>
+					{{#each influences}}
+					<li>
+						<div class="col-12 my-4">{{this}}</div>
+					</li>
+					{{/each}}
+				</ul>
+			</div>
+			<hr>
+			<div class="col-12 my-4">
+				<b>Influenced</b>
+				<ul>
+					{{#each influenced}}
+					<li>
+						<div class="col-12 my-4">{{this}}</div>
+					</li>
+					{{/each}}
+				</ul>
+			</div>
+			<hr>
+			<div class="col-12 my-4">
+				<b>Quotes</b>
+				<ul>
+					{{#each quotes}}
+					<li>
+						<div class="col-12 my-4">{{this}}</div>
+					</li>
+					{{/each}}
+				</ul>
+			</div>
+			<hr>
+			<div class="col-12 my-4">
+				<b>Major discoveries</b>
+				<ul>
+					{{#each major_discoveries}}
+					<li>
+						<div class="col-12 my-4">{{title}} ({{year}}) - {{description}}</div>
+					</li>
+					{{/each}}
+				</ul>
+			</div>
+			<hr>
+			<div class="col-12 my-4"><b>Contributions</b></div>
 			{{#with contributions}}
-			<div>
-				{{title}} ({{year}}):
-				<br> {{description}} ({{field}})
+			<div class="col-12 my-4">
+				<div>{{title}} ({{year}}):</div>
+				<div>{{description}} ({{field}})</div>
 			</div>
 			{{/with}}
 		</section>

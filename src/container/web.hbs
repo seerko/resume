@@ -1,79 +1,86 @@
-{{!--
+{{!
 Це код container файлу для index сторінки,
 в якому міститься код, котрий буде віддаватися по шляху (PATH) - "/"
---}}
+}}
 
-<div>
-	<main>
-		{{#with web}}
-		<section>
-			<h1>Languages</h1>
-			<div>
-				<ul>
-					{{#each languages}}
-					<li>
-						<div><strong>{{name}}</strong> ({{version}}) - {{description}}</div>
-						<br>
-						<div><b>Elements:</b></div>
-						<br>
-						<ul>
-							{{#each elements}}
-							<div>
-								<li><b>{{name}}</b> - {{description}}</li>
-							</div>
-							<br>
-							<div><i>Attributes:</i></div>
-							<br>
-							<ul>
-								{{#each attributes}}
-								<li><b>{{name}}</b> - {{description}}</li>
-								<br>
-								{{/each}}
-							</ul>
-							{{/each}}
-							{{#each properties}}
-							<div>
-								<li><b>{{name}}</b> - {{description}}</li>
-							</div>
-							<br>
-							<div><i>Value:</i></div>
-							<br>
-							<ul>
-								{{#each values}}
-								<li><b>{{value}}</b> - {{description}}</li>
-								<br>
-								{{/each}}
-							</ul>
-							{{/each}}
-							{{#each functions}}
-							<div>
-								<li><b>{{name}}</b> - {{description}}</li>
-							</div>
-							<br>
-							<div><i>Parameters:</i></div>
-							<br>
-							<ul>
-								{{#each parameters}}
-								<li><b>{{name}}</b> ({{type}}) - {{description}}</li>
-								<br>
-								{{/each}}
-							</ul>
-							{{/each}}
-						</ul>
-					</li>
-					<br>
-					{{/each}}
-				</ul>
-			</div>
+<div class='row'>
+  <main>
+    {{#with web}}
+      <section>
+        <h1>Languages</h1>
+        <div class='col-12 my-4'>
+          <ul>
+            {{#each languages}}
+              <li>
+                <div class='col-12 my-4'><strong
+                  >{{name}}</strong>
+                  ({{version}}) -
+                  {{description}}</div>
+                <div class='col-12 my-4'><b
+                  >Elements:</b></div>
+                <ul>
+                  {{#each elements}}
+                    <div class='col-12 my-4'>
+                      <li><b>{{name}}</b>
+                        -
+                        {{description}}</li>
+                    </div>
+                    <div class='col-12 my-4'><i
+                      >Attributes:</i></div>
+                    <ul>
+                      {{#each attributes}}
+                        <li class='my-4'><b>{{name}}</b>
+                          -
+                          {{description}}</li>
+                      {{/each}}
+                    </ul>
+                  {{/each}}
+                  {{#each properties}}
+                    <div class='col-12 my-4'>
+                      <li><b>{{name}}</b>
+                        -
+                        {{description}}</li>
+                    </div>
+                    <div class='col-12 my-4'><i
+                      >Value:</i></div>
+                    <ul>
+                      {{#each values}}
+                        <li class='my-4'><b>{{value}}</b>
+                          -
+                          {{description}}</li>
+                      {{/each}}
+                    </ul>
+                  {{/each}}
+                  {{#each functions}}
+                    <div class='col-12 my-4'>
+                      <li><b>{{name}}</b>
+                        -
+                        {{description}}</li>
+                    </div>
+                    <div class='col-12 my-4'><i
+                      >Parameters:</i></div>
+                    <ul>
+                      {{#each parameters}}
+                        <li class='my-4'><b>{{name}}</b>
+                          ({{type}}) -
+                          {{description}}</li>
+                      {{/each}}
+                    </ul>
+                  {{/each}}
+                </ul>
+              </li>
+            {{/each}}
+          </ul>
+        </div>
 
-		</section>
-		{{/with}}
-	</main>
+      </section>
+    {{/with}}
+  </main>
 </div>
 
-{{!--
+{{!
 Цей код містить лише те, що буде виводитись в
 
 <body>
 	Адже наш layout/default.hbs має вже структуру HTML
-	--}}
+	}}

@@ -3,63 +3,52 @@
 в якому міститься код, котрий буде віддаватися по шляху (PATH) - "/summary"
 --}}
 
-<div>
+<div class="row">
 	{{#with main}}
 	<main>
 		<section>
 			{{> title data="Work history" big=true}}
-			<div>
+			<div class="col-12">
 				<ul>
 					{{#each works}}
-					<li>
-						<div>{{position}}</div>
-						<br>
-						<div>
+					<li class="my-4">
+						<div class="col-12 mb-4">{{position}}</div>
+						<div class="col-12 mb-4">
 							{{duration.from}} -
-							{{#if duration.to}} {{duration.to}} {{else}} (досі працюємо) {{/if}}
+							{{#if duration.to}} {{duration.to}} {{else}} (досі працюю) {{/if}}
 						</div>
-						<br>
-						<div>
+						<div class="col-12 mb-4">
 							{{#if company.url}}
 							{{> link text=company.name href=company.url blank=true noLine=true }}
 							{{else}}
 							<b>{{company.name}}</b>
 							{{/if}}
 						</div>
-						<br>
-						<div>
+						<div class="col-12 mb-4">
 							<strong>Projects ({{projectAmount}})</strong>
 						</div>
-						<br>
 						<ul>
 							{{#each projects}}
 							<li>
-								<div>
+								<div class="col-12 mb-4">
 									{{> link text=name href=url blank=true noLine=true }}
 								</div>
-								<br>
-								<div>
+								<div class="col-12 mb-4">
 									<p>{{about}}</p>
 								</div>
-								<br>
-								<div>
-									<em>Project stacks ({{stackAmount}})</em>
-									<br>
+								<div class="col-12 mb-4">
+									<em class="mb-4">Project stacks ({{stackAmount}})</em>
 									<ul>
 										{{#each stacks}}
-										<br>
-										<li>{{name}}</li>
+										<li class="my-4">{{name}}</li>
 										{{/each}}
 									</ul>
 								</div>
-								<br>
-								<div>
-									<em>Project awards ({{awardAmount}})</em>
-									<br>
+								<div class="col-12 mb-4">
+									<em class="mb-4">Project awards ({{awardAmount}})</em>
 									<ul>
 										{{#each awards}}
-										<br>
-										<li>{{name}}</li>
+										<li class="my-4">{{name}}</li>
 										{{/each}}
 									</ul>
 								</div>
@@ -67,7 +56,6 @@
 							{{/each}}
 						</ul>
 					</li>
-					<br>
 					{{/each}}
 				</ul>
 			</div>

@@ -1,19 +1,31 @@
 <footer>
 	<hr>
-	<br>
-	<div>
-		{{#with social}}
-		{{> link text=email.text href=email.href blank=true }}
-		{{> link text=phone.text href=phone.href blank=true }}
-		{{> link text=linkedin.text href=linkedin.href blank=true noLine=true }}
-		{{/with}}
+	<nav class="navbar bg-body-tertiary">
+		<div class="container-fluid">
+			<ul class="nav">
+				{{#with social}}
+				<li class="nav-item">
+					{{> link class="nav-link" text=email.text href=email.href blank=true }}
+				</li>
+				<li class="nav-item">
+					{{> link class="nav-link" text=phone.text href=phone.href blank=true }}
+				</li>
+				<li class="nav-item">
+					{{> link class="nav-link" text=linkedin.text href=linkedin.href blank=true }}
+				</li>
+				{{/with}}
+			</ul>
+		</div>
+	</nav>
+	<div class="row">
+		<div class="col-12 my-4">
+			<em>Copyright by {{firstname}} {{lastname}}</em>
+		</div>
 	</div>
-	<br>
-	<div>
-		<em>Copyright by {{firstname}} {{lastname}}</em>
-	</div>
-	<br>
-	<div>
-		<address>{{address}}</address>
+
+	<div class="row">
+		<div class="col-12">
+			<address>{{address}}</address>
+		</div>
 	</div>
 </footer>

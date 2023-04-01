@@ -3,78 +3,68 @@
 в якому міститься код, котрий буде віддаватися по шляху (PATH) - "/"
 --}}
 
-<div>
+<div class="row">
 	<main>
 		{{#with program}}
 		<section>
 			{{#with excursion}}
 			<h1>{{name}} - {{location.city}}, {{location.country}} ({{date}})</h1>
-			<div>
+			<div class="col-12 my-4">
 				{{> title data="Program" big=true}}
 				<ul>
 					{{#each program}}
 					<li>
-						<div><strong>{{name}}</strong> - {{type}} ({{duration}})</div>
-						<br>
-						<div><b>Details:</b></div>
-						<br>
+						<div class="col-12 my-4"><strong>{{name}}</strong> - {{type}} ({{duration}})</div>
+						<div class="col-12 my-4"><b>Details:</b></div>
 						{{#with details}}
 						{{#with museum}}
 						<div>
-							<div>{{name}}</div>
-							<br>
-							<div>
+							<div class="col-12 my-4">{{name}}</div>
+							<div class="col-12 my-4">
 								<address>{{location.address}} - {{location.city}}, {{location.country}}</address>
 							</div>
 						</div>
-						<br>
-						<div>
+						<div class="col-12 my-4">
 							<ul>
 								{{#each exhibits}}
 								<li>
-									<div>
+									<div class="col-12 my-4">
 										{{name}}
 										{{#if artist}} ({{artist}}) {{/if}}
 										- {{description}}
 										{{#if audio_guide}} (<i>audio guide</i>) {{/if}}
 								</li>
-								<br>
 								{{/each}}
 							</ul>
 						</div>
 						{{/with}}
 						{{#with venue}}
-						<div>
-							<div>{{name}}</div>
-							<br>
-							<div>
+						<div class="col-12 my-4">
+							<div class="col-12 my-4">{{name}}</div>
+							<div class="col-12 my-4">
 								<address>{{location.address}} - {{location.city}}, {{location.country}}</address>
 							</div>
 						</div>
-						<br>
 						{{/with}}
 						{{#if performers}}
-						<div>
+						<div class="col-12 my-4">
 							<ul>
 								{{#each performers}}
 								<li>
-									<div>
+									<div class="col-12 my-4">
 										{{name}} - {{type}}
+									</div>
 								</li>
-								<br>
 								{{/each}}
 							</ul>
 						</div>
 						{{/if}}
-						<br>
 						{{#with guide}}
-						<div><b>Guide:</b> {{name}} (<em>{{language}}</em>) Rating: {{rating}} </div>
+						<div class="col-12 my-4"><b>Guide:</b> {{name}} (<em>{{language}}</em>) Rating: {{rating}} </div>
 						{{/with}}
-						<br>
 						<hr>
 						{{/with}}
 					</li>
-					<br>
 					{{/each}}
 				</ul>
 			</div>

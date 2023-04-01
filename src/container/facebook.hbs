@@ -3,80 +3,70 @@
 в якому міститься код, котрий буде віддаватися по шляху (PATH) - "/"
  }}
 
-<div>
+<div class='row'>
   <main>
     <section>
       <h1>{{name}}</h1>
-      <br />
-      <div>
+      <div class='col-12 my-4'>
         <ul>
           {{#each users}}
-            <li>
+            <li class='my-4'>
               #{{id}}
               {{name}}
               ({{age}},
               {{gender}})
             </li>
-            <br />
-            <h4>Friends:</h4>
-            <br />
+            <h4 class='my-4'>Friends:</h4>
             <ul>
               {{#each friends}}
-                <li>
+                <li class='my-4'>
                   #{{id}}
                   {{name}}
                   ({{age}},
                   {{gender}})
                 </li>
-                <br />
                 {{#if mutual_friends}}
                   <ul>
                     {{#each mutual_friends}}
-                      <li>
+                      <li class='my-4'>
                         #{{id}}
                         {{name}}
                         ({{age}},
                         {{gender}})
                       </li>
-                      <br />
                       {{#if mutual_friends}}
                         <ul>
                           {{#each mutual_friends}}
-                            <li>
+                            <li class='my-4'>
                               #{{id}}
                               {{name}}
                               ({{age}},
                               {{gender}})
                             </li>
-                            <br />
                           {{/each}}
                         </ul>
                       {{/if}}
                     {{/each}}
                   </ul>
                 {{/if}}
-                <br />
                 {{#if groups}}
-                  <h4>Groups:</h4>
-                  <br />
+                  <h4 class='my-4'>Groups:</h4>
                   <ul>
                     {{#each groups}}
-                      <li>
-                        #{{id}}
-                        {{name}}
-                        <br />{{description}}
+                      <li class='my-4'>
+                        <div>#{{id}}
+                          {{name}}</div>
+                        <div>{{description}}</div>
                       </li>
-                      <br />
                       {{#if members}}
                         <ul>
                           {{#each members}}
-                            <li>
+                            <li class='my-4'>
                               #{{id}}
                               {{name}}
                               ({{age}},
                               {{gender}})
                             </li>
-                            <br />
                           {{/each}}
                         </ul>
                       {{/if}}
@@ -85,28 +75,24 @@
                 {{/if}}
               {{/each}}
             </ul>
-            <br />
             {{#if groups}}
-              <h4>Groups:</h4>
-              <br />
+              <h4 class='my-4'>Groups:</h4>
               <ul>
                 {{#each groups}}
-                  <li>
-                    #{{id}}
-                    {{name}}
-                    <br />{{description}}
+                  <li class='my-4'>
+                    <div>#{{id}}
+                      {{name}}</div>
+                    <div>{{description}}</div>
                   </li>
-                  <br />
                   {{#if members}}
                     <ul>
                       {{#each members}}
-                        <li>
+                        <li class='my-4'>
                           #{{id}}
                           {{name}}
                           ({{age}},
                           {{gender}})
                         </li>
-                        <br />
                       {{/each}}
                     </ul>
                   {{/if}}
